@@ -1,6 +1,6 @@
 /* A) NOTES */
 
-//Test to push 27.08.23...
+//Test to commit to GitHub Repo 29.08.23...
 
 /* Syntax for Pulling from Remote Github Repository */
 
