@@ -2,10 +2,10 @@
 
 //Test to commit to GitHub Repo 29.08.23...
 
-/* Syntax for Pulling from Remote Github Repository */
+/* Syntax for Pulling from Remote GitHub Repository */
 
 // a) In command prompt, cd to Project Location in Local PC
-// b) Pull the files from the remote Github master folder using: git pull "repository link"
+// b) Pull the files from the remote GitHub master folder using: git pull "repository link"
 
 
 /* Kotlin is statically typed, meaning the code is continuously compiled for errors before execution.
@@ -430,6 +430,23 @@ fun main() {
             println("Invalid input!")
         }
 
+    //another when-else, done after practicing much later :)
+
+    println("We have three countries: \n a) Kenya \n b) England \n c) Brazil \n " +
+            "Enter any country from the list given, and I will tell you the capital!")
+
+    val myCustUserInput = readlnOrNull()?.uppercase()//safe call null operator
+
+    if (!myCustUserInput.isNullOrBlank()){
+        val myCustChoices = when(myCustUserInput){
+            in "KENYA"->"The capital of Kenya is Nairobi!"
+            in "ENGLAND"->"The capital of England is London!"
+            in "BRAZIL"->"The capital of Brazil is Rio de Janeiro!"
+            else->"That country is not on the list given, sorry!"
+        }
+        println(myCustChoices)
+    }
+    else println("Invalid input!")
 
 
     /* 8) CONTROL FLOW - WHILE LOOP */
