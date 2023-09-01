@@ -31,7 +31,8 @@ unless another one with the same name is declared inside the block
 A variable exists only inside the block of code where it has been declared.
 Naming variables should follow the lowerCamelCase format.
 
-var badVariable = 9 //variables can be declared at the top level, or globally, they will be accessed anywhere within the code.
+var badVariable = 9 //variables can be declared at the top level, or globally,
+they will be accessed anywhere within the code.
 This is not encouraged.
 
 
@@ -49,7 +50,9 @@ This is not encouraged.
 
 /*
 
-Encasing this and the below two lines is a Multiline comment. It can be used as needed as long as its enclosed.
+Encasing this and the below two lines is a Multiline comment.
+It can be used as needed as long as its enclosed.
+
 another sentence to show the M-Comment
 another sentence to show the M-Comment
 
@@ -126,7 +129,8 @@ fun main() {
     val comparisonNum1 = 5
     val comparisonNum2 = 3
 
-    if (comparisonNum1 != comparisonNum2){ //this is the "not equal" to operator, both variables are equal in this case
+    if (comparisonNum1 != comparisonNum2){ //this is the "not equal" to operator,
+                                          // both variables are equal in this case
                                           //others include ==, >, >=, <=, and <
         println("Not Equal")
     }else {
@@ -146,7 +150,8 @@ fun main() {
     val logicalNum1  = 6
     val logicalNum2  = 1
 
-    if(logicalNum1 > 3 || logicalNum2 < 5){ //logical OR if any of the statements is true, then the end result is true
+    if(logicalNum1 > 3 || logicalNum2 < 5){ //logical OR if any of the statements is true,
+                                           // then the end result is true
         println("This statement is true.")
     }else{
         println("This statement is not true.")
@@ -192,7 +197,8 @@ fun main() {
     val age1 = 7
     val myStringTemp = "My age is $age1"
 
-    //The replace function does not work directly on an Int variable, as it is defined on CharSequence and String.
+    //The replace function does not work directly on an Int variable,
+    //as it is defined on CharSequence and String.
     val myStringTempReplace = "My age was $age1 but now ${myStringTemp.replace("7", "78")}."
     println(myStringTempReplace)
 
@@ -336,8 +342,9 @@ fun main() {
 
     //another simple when-else conditional
     println("Enter a planet name:")
-    val result = when(readln().uppercase()){ //the uppercase function will convert the input (small case or uppercase) to uppercase
-        //make sure the "when" options are in uppercase
+    val result = when(readln().uppercase()){ //the uppercase function will convert the input
+                                            // (small case or uppercase) to uppercase
+                                           // make sure the "when" options are in uppercase
         "MARS"->"Mars is the closest neighbour to Earth!"
         "EARTH"->"Earth is our home planet!"
         "JUPITER"->"Jupiter is the largest planet!"
@@ -372,16 +379,16 @@ fun main() {
     //note the long number, as the user might enter a number bigger than INT limits
 
     val customResult = when{
-        input == null ->"Invalid input, enter a whole number!" //when the input cannot be converted to a whole integer
+        input == null ->"Invalid input, enter a whole number!" //when the input cannot be
+                                                              // converted to a whole integer
         // null represents the absence of a valid value,
         // so if you put a string, then this line will be executed
-        input % 2L == 0L ->"The number is even!" //by default, no need for another line for odd, also LONG number
+        input % 2L == 0L ->"The number is even!" //by default, no need for another line for odd,
+                                                // also LONG number
         // since the only other option is odd
         else->"The number is odd!"
     }
     println(customResult)
-
-    //
 
     //another simple when-else conditional
     println("Type either \"Cheetah\" or \"Snail\" from the list to see their speed:")
@@ -477,7 +484,8 @@ fun main() {
     /* 8 Add. CONTROL FLOW - FOR LOOP */
 
     //the for loop is used to iterate over a collection of elements or a range of values.
-    // It allows you to execute a block of code repeatedly, once for each element or value in the specified range.
+    // It allows you to execute a block of code repeatedly,
+    // once for each element or value in the specified range.
     //the loop can work on ranges, arrays, strings, and collections.
 
     //for loop in an immutable list
@@ -539,7 +547,8 @@ fun main() {
     }
 
     //for loop iterate a list using an index
-    //We use the [] since the loop variable "index" is not looping through the elements themselves rather the index positions
+    //We use the [] since the loop variable "index" is not looping through the elements themselves,
+    //rather the(ir) index positions
     //It retrieves each element using the index and prints it out.
     val loopTestList = listOf(7, 6, 8, 3)
 
@@ -570,7 +579,8 @@ fun main() {
 
     //break statement, this will stop the loop at the point specified
     //in this case; the loop breaks after printing 2
-    //NOTE: the placement of the break statement in relation to the print statement in a non-nested while loop does not affect the output
+    //NOTE: the placement of the break statement in relation to...
+    // the print statement in a non-nested while loop does not affect the output
     //the value equal to the break statement will not be printed, only those before
     var breakLoopNumber = 0
 
@@ -590,16 +600,21 @@ fun main() {
 
     //NOTE: The main difference between a normal 'break' and 'labelled break' is that the labelled break...
     //is best used in a nested loop or control structure
-    // and allows you to break out of an outer loop based on a specific label, while regular break exits the innermost loop or control structure.
-    //ALSO: labelled break is best used for a nested control structure, and not non-nested control structures, a break will be sufficient for that.
+    // and allows you to break out of an outer loop based on a specific label,
+    // while regular break exits the innermost loop or control structure.
+    //ALSO: labelled break is best used for a nested control structure,
+    //and not non-nested control structures, a break will be sufficient for that.
 
     //customLoop@ is a label placed before the for loop. It acts as a marker or identifier for the loop.
     //The outer loop iterates over the range 1..3, with the variable 'i' taking the values 1, 2, and 3.
-    //Inside the outer loop, there is another nested loop that iterates over the range 1..3, with the variable j taking the values 1, 2, and 3.
+    //Inside the outer loop, there is another nested loop that iterates over the range 1..3,
+    //with the variable j taking the values 1, 2, and 3.
     //The if statement checks that the value of j is equal to 3.
     //If j is equal to 3, the break@customLoop statement is executed.
-    // It means that the program flow will break out of both the inner and outer loops, exiting the loop entirely.
-    //If j is not equal to 3, the println("i=$i j=$j") statement is executed, which prints the values of i and j to the console.
+    // It means that the program flow will break out of both the inner and outer loops,
+    //exiting the loop entirely.
+    //If j is not equal to 3, the println("i=$i j=$j") statement is executed,
+    //which prints the values of i and j to the console.
 
 
     customLoop@for (i in 1..3){
@@ -613,8 +628,10 @@ fun main() {
 
     println()
 
-    //Unlike the labelled break, the regular break, (also employed in the while loop above) only exits the loop (with variable j) where it is put in.
-    //The outer loop (the loop controlled by the variable i) will continue executing for its remaining iterations.
+    //Unlike the labelled break, the regular break, (also employed in the while loop above)
+    // only exits the loop (with variable j) where it is put in.
+    //The outer loop (the loop controlled by the variable i) will continue executing
+    // for its remaining iterations.
     for (i in 1..3) {
         for (j in 1..3) {
             if (j == 3) {
@@ -642,7 +659,8 @@ fun main() {
     println()
     println()
 
-    //IF the break statement appears after the print statement, then all characters up to and including 's' will be printed
+    //IF the break statement appears after the print statement,
+    // then all characters up to and including 's' will be printed
     //thus, the output will be 'Geeks' before the loop is terminated by the break statement.
     val name2 = "GeeksforGeeks"
     for (i in name2){
@@ -671,7 +689,8 @@ fun main() {
     /* 10 c) CONTROL FLOW - BREAK AND LABELLED BREAK FURTHER EXAMPLES */
 
     //break statement in a for loop
-    //if break statement is before print statement, output will not include the value equal to the break statement
+    //if break statement is before print statement...
+    // the output will not include the value equal to the break statement
     //vice-versa if the break statement is after the print statement
 
     for (forLoopBreak in 0..3){
@@ -697,7 +716,8 @@ fun main() {
     println()
 
     //labelled break statement in a nested for loop
-    //this will allow the code to exit the inner and outer loop altogether, as compared to a regular break statement
+    //this will allow the code to exit the inner and outer loop altogether,
+    //as compared to a regular break statement
     labelbreak@ for (nestedOuterLoop in 1..3){
         for (nestedInnerLoop in 1..5){
             println("$nestedOuterLoop $nestedInnerLoop")
@@ -710,7 +730,8 @@ fun main() {
 
     /* 11) CONTROL FLOW - CONTINUE STATEMENT */
 
-    //continue statement, this will break one iteration IN THE LOOP, if a condition occurs, and then continues with the rest of the loop.
+    //continue statement, this will break one iteration IN THE LOOP, if a condition occurs,
+    // and then continues with the rest of the loop.
     //In this case,the code skips printing the value when the loop number is 4 and prints the value otherwise.
 
     var continueLoopNumber = 0
@@ -729,7 +750,8 @@ fun main() {
     println()
 
     //another version of unlabelled continue, using a character in the alphabet
-    //note that the placement of the continue statement in relation to the print statement doesn't affect the output in a simple while loop
+    //note that the placement of the continue statement in relation to the print statement
+    // doesn't affect the output in a simple while loop
     //this is unlike for loops, where that may matter.
 
     var customLetter = 'A'
@@ -748,7 +770,8 @@ fun main() {
 
     //unlabelled continue statement in a simple for loop
     //The continue statement is placed before the print statement.
-    //This means that when the condition forLoopSimpleContinue == 2 is true, the continue statement is executed.
+    //This means that when the condition forLoopSimpleContinue == 2 is true...
+    // the continue statement is executed.
     // This causes the loop to skip the print statement for that iteration.
     //all the other iterations after that are printed, in this case, its only 3.
     // Therefore, the value 2 is not printed in the output (0, 1, 3)
@@ -774,7 +797,9 @@ fun main() {
     println()
     println()
 
-    //unlabelled continue statement in a nested for loop, where the continue statement appears after the print statement
+    //unlabelled continue statement in a nested for loop,
+    //where the continue statement appears after the print statement.
+
     //the continue statement within the inner loop doesn't affect the output
     //because all the inner loop iterations have been executed and printed before the continue statement has a chance to take effect.
 
@@ -788,10 +813,15 @@ fun main() {
     println()
     println()
 
-    //unlabelled continue statement in a nested for loop, where the continue statement appears before the print statement
-    //the continue statement will skip 2 for each iteration, but print all other values in the inner loop (0,1,3)
+    //unlabelled continue statement in a nested for loop,
+    //where the continue statement appears before the print statement.
+
+    //the continue statement will skip 2 for each iteration,
+    //but print all other values in the inner loop (0,1,3).
+
     //note that the continue statement inside the inner loop affects the printing of 2,and...
-    //since 2 cannot be printed, its corresponding nestedForLoopOutContinue values in the outer loop also cannot be seen in the output.
+    //since 2 cannot be printed...
+    //its corresponding nestedForLoopOutContinue values in the outer loop also cannot be seen in the output.
 
     for (nestedForLoopOutContinue in 0..3){
         for (nestedForLoopInContinue in 0..3){
@@ -817,7 +847,8 @@ fun main() {
 
     //-> break statement:
 
-    //When encountered in a loop, it immediately terminates the loop, regardless of whether the loop has completed all iterations or not.
+    //When encountered in a loop, it immediately terminates the loop,
+    //regardless of whether the loop has completed all iterations or not.
     //The program continues with the code after the loop, skipping any remaining iterations.
 
 
@@ -826,10 +857,14 @@ fun main() {
     //arrays. store multiple values in a variable
 
     //NOTE: In most programming languages, arrays only hold elements of the same data type.
-    //However, with Kotlin,arrays can hold elements with different data types because the arrays can be of type Array<Any>.
+    //However, with Kotlin,arrays can hold elements with different data types
+    //because the arrays can be of type Array<Any>.
+
     //Since the arrayOf() function is used, the Kotlin compiler infers the type of the array to be Array<Any>
     //This means it can store elements of any type (Any is the root type in Kotlin).
-    //It's important to note that this behavior is specific to Kotlin and may not be applicable in other programming languages.
+
+    //It's important to note that this behavior is specific to Kotlin
+    //and may not be applicable in other programming languages.
 
     val myCustomArray = arrayOf("Ar","Se","Ti", 1)
 
@@ -881,12 +916,23 @@ fun main() {
 
     val userChoice = readln().toDoubleOrNull()
 
-    //NOTE: When working with user input, it's generally a good practice to check for nullability and handle cases where the input might be null.
-    //This is because user input can be unpredictable, and it's essential to account for scenarios where the user might provide unexpected or invalid data.
-    //Checking for nullability allows you to validate the input and ensure that the necessary data is present before proceeding with further calculations or operations.
-    //It helps prevent potential runtime exceptions like NullPointerException and allows you to handle such cases gracefully.
-    //By using techniques like null checks, safe call operators (?.), or the Elvis operator (?:),you can handle nullability in a way that suits your requirements.
-    // This ensures that your code can handle different scenarios and provides appropriate feedback or takes alternative actions when necessary.
+    //NOTE: When working with user input,
+    //it's generally a good practice to check for nullability and handle cases where the input might be null.
+
+    //This is because user input can be unpredictable,
+    //and it's essential to account for scenarios where the user might provide unexpected or invalid data.
+
+    //Checking for nullability allows you to validate the input,
+    //and ensure that the necessary data is present before proceeding with further calculations or operations.
+
+    //It helps prevent potential runtime exceptions like NullPointerException,
+    //and allows you to handle such cases gracefully.
+
+    //By using techniques like null checks, safe call operators (?.), or the Elvis operator (?:),
+    //you can handle nullability in a way that suits your requirements.
+
+    // This ensures that your code can handle different scenarios,
+    //and provides appropriate feedback or takes alternative actions when necessary.
 
     if(userChoice!=null) { //this is the null check
         val distanceInMiles = userChoice * 1.60934
@@ -900,11 +946,15 @@ fun main() {
     //another null safety check
     //output will be "null" since the distanceMetres is a potential null variable
 
-    //AGAIN: Null pointer exceptions occur when you try to access or perform operations on a variable or object that is null (has no value assigned to it).
+    //AGAIN: Null pointer exceptions occur when you try to access,
+    //or perform operations on a variable or object that is null (has no value assigned to it).
+
     //These exceptions can cause program crashes or unexpected behavior.
-    //By using null safety checks, you can avoid null pointer exceptions by...
+    //By using null safety checks, you can avoid null pointer exceptions by
     //explicitly checking if a variable is null before accessing its properties or invoking its methods.
-    // If the variable is null, the null safety check allows the program to gracefully handle the situation without crashing or producing errors.
+
+    // If the variable is null, the null safety check allows the program
+    //to gracefully handle the situation without crashing or producing errors.
 
     val distanceMetres: Int? = null
 
@@ -915,7 +965,7 @@ fun main() {
 
     /* 14) --- FUNCTIONS --- */
 
-    /* Note all function calls in this section correspond to the functions outside the main function section. */
+    /* Note all function calls in this section correspond to the functions outside the main fun section. */
 
     //Introduction and explanation of what functions are can be found after the main function section.
 
@@ -927,10 +977,13 @@ fun main() {
     //in this case the remainder is 0
     println(numOne.rem(numTwo))
 
-    println() //one of the main predefined functions. prints out whatever is encased in the parentheses. jumps a line in the code.
+    println() //one of the main predefined functions. prints out whatever is encased in the parentheses.
+             // jumps a line in the code.
 
     //calling functions in the main function.
-    //for the functions without any output in their body, they will not execute output unless you pass them through the println() function
+
+    //for the functions without any output in their body,
+    //they will not execute output unless you pass them through the println() function
     sum(10, 10) //this is a function call
     diff(10, 5)
 
@@ -939,7 +992,9 @@ fun main() {
 
     myFunc("David") //same to this one
 
-    greetings() //the function being called already has a named string parameter "David", so it will output that.
+    greetings() //the function being called already has a named string parameter "David",
+                // so it will output that.
+
                //one can however invoke the function with another value,
                // and that value will replace the argument in the function's parentheses.
 
@@ -967,7 +1022,6 @@ fun main() {
 
     println("The perimeter of the rectangle is:"+myPerimeterRectangle+"meters.")
 
-
     //a second example of an anonymous function
     val checkEvenOrOdd = fun(cNum: Int): String{
         return if (cNum % 2 == 0)
@@ -988,7 +1042,8 @@ fun main() {
 
     val perimeterSquare = {l:Int-> 4*l} //the expression itself is in the brackets {}
                                        //the return type is optional since...
-                                      //...Kotlin can use type inference to deduce the data type of the return value
+                                      //...Kotlin can use type inference to
+                                      //deduce the data type of the return value.
 
     println("The perimeter of this square is ${perimeterSquare(6)}km.")
 
@@ -1027,7 +1082,9 @@ fun main() {
     val l = {print("Hello, ")} //the lambda expression
 
     fun higherFunc(lmbd:()->Unit){  //a higher-order function that has one parameter lmbd
-                                   // this is the receiving parameter, and () indicates that it does not accept arguments
+                                   // this is the receiving parameter, and () indicates that
+                                  // it does not accept arguments.
+
                                   //Unit shows that the function does not return any value
         lmbd()
     }
@@ -1067,7 +1124,9 @@ fun main() {
 
 
     //a bit different for the below function call
-    val myCountryList: List<String> = myForLoopWithReturn() //a variable that takes holds a list of Strings from the myForLoopWithReturn() function
+    val myCountryList: List<String> = myForLoopWithReturn()
+    //the above is a variable that takes holds a list of Strings from the myForLoopWithReturn() function
+
     for (myCountry in myCountryList){
         print("$myCountry ")
     }
@@ -1173,7 +1232,8 @@ fun main() {
 
     println("$myOtherColorList ")
 
-    //to remove the brackets when printing an array list, or any collection for that matter, we can use a for loop
+    //to remove the brackets when printing an array list, or any collection for that matter,
+    //we can use a for loop.
 
     for (customArrayListLooper in myOtherColorList){
         print("$customArrayListLooper ")
@@ -1282,7 +1342,9 @@ fun main() {
     //note that hash sets implement the mutableSetOf interface
     //also has sets use hash codes to manage their internal storage,
     // which can result in elements being stored and retrieved in an unpredictable order.
-    // So, when you print the HashSet, the order of elements can vary each time you run the code or even during different runs of the same program.
+
+    // So, when you print the HashSet, the order of elements can vary each time...
+    //you run the code or even during different runs of the same program.
     val myHashCars = hashSetOf("Volvo", "Jeep", "Jeep", "Mazda", "Toyota", "Mitsubishi")
 
     println(myHashCars)
@@ -1302,11 +1364,11 @@ fun main() {
 
     println(myNewHashCars)
 
-    //Similarly to a normal set, you can traverse, access elements with the same syntax, check elements contained in the set, among other operations
+    //Similarly to a normal set, you can traverse, access elements with the same syntax,
+    //check elements contained in the set, among other operations.
 
 
     //c) Maps - Collections of key-value pairs/objects, where each key is unique
-
 
     //map keys hold only one value for each key, and each key maps to exactly one value, not more
     //maps store  logical connections between two objects, like a city and country, or a person and age
@@ -1365,10 +1427,10 @@ fun main() {
     println(employeeToAge.containsValue(64)) //false
 
     //traverse the map keys only
-    for((hmIndex, mapKey) in employeeToAge.keys.withIndex()){ //hmIndex is the index position, mapKey is the actual key value
+    for((hmIndex, mapKey) in employeeToAge.keys.withIndex()){ //hmIndex is the index position,
+                                                             // mapKey is the actual key value
         println("The key value at index $hmIndex is $mapKey")
     }
-
 
 
     /* 16)  CLASSES */
@@ -1401,8 +1463,10 @@ fun main() {
 
     val projectManager = MyEmployee("Erica", "Bloom", 30, 1956)
 
-    println("Our latest member of the board is ${projectManager.empFullName}. She is ${projectManager.empAge} years old," +
-            " and has been working for the company for ${projectManager.yearsWorked} years. ${projectManager.allTheBest()}")
+    println("Our latest member of the board is ${projectManager.empFullName}." +
+            "She is ${projectManager.empAge} years old," +
+            " and has been working for the company for ${projectManager.yearsWorked} years."
+            +" ${projectManager.allTheBest()}")
 
 
     //MyFamily class
@@ -1421,6 +1485,14 @@ fun main() {
     customBrand1.yearOfBrand(year = 2003)
     customBrand1.modelType()
 
+    //DKEmployee class to show
+    val employee1 = DKEmployee('M')
+
+    println("The employee is called ${employee1.name("David")}, ${employee1.age(26)}${employee1.gender}. " +
+            "They earn $${employee1.salary(45667.00)} per year.")
+
+
+
 
 
 
@@ -1433,7 +1505,9 @@ fun main() {
 //------------FUNCTIONS:---------------
 
 //functions are blocks of code that run when called/invoked by another part of the code.
-//why functions? modularity (breakable),  reusable, abstraction of complex logic, and also improved readability of code.
+//why functions? modularity (breakable),  reusable, abstraction of complex logic,
+//and also improved readability of code.
+
 //you can pass data called parameters into a function, also called arguments.
 //you can have as many parameters as you wish.
 //remember parameters are read-only or val by default, so don't use val or val, as explained further below.
@@ -1473,10 +1547,17 @@ fun prod(a:Int, b:Int){ //simple function that does not return anything, or a vo
     println("The product is ${a*b}")
 }
 
-//when calling a function with arguments in the main() function, the arguments should be passed in the order defined in the function
-//If you're not using named arguments, then the arguments should be passed in the order they are defined in the function.
+//when calling a function with arguments in the main() function,
+//the arguments should be passed in the order defined in the function.
+
+//If you're not using named arguments,
+//then the arguments should be passed in the order they are defined in the function.
+
 //This is the default behavior in Kotlin.
-//If you're using named arguments, then you can pass the arguments in any order by explicitly specifying the parameter names in the function call.
+
+//If you're using named arguments,
+// then you can pass the arguments in any order by explicitly specifying the parameter names
+//in the function call.
 
 //example below
 
@@ -1520,7 +1601,9 @@ fun greetings(gName: String = "David"){
 
 //The main function then calls the callMe function with the integer argument "5" or whatever deems fit.
 //So, when the main function is called, it will invoke the callMe function with 5.
-//The callMe function will print 5, then call itself again with a-1, which is 4. This process will repeat until a becomes 0, resulting in the output: 5,4,3,2,1,0.
+//The callMe function will print 5, then call itself again with a-
+
+//This process will repeat until a becomes 0, resulting in the output: 5,4,3,2,1,0.
 
 fun callMe(a: Int){
 
@@ -1534,28 +1617,42 @@ fun callMe(a: Int){
 //then the output would be in reverse from 0,1,2,3,4,5
 //this would be because the function, after making all the recursive calls from the if statement...
 //...would now return back to all its previous calls from 0 to 5, effected in the print statement
+
 //in other concise words, when the base case is reached and callMe(0) is executed, it prints the value 0.
-//At this point, the base case does not make any further recursive calls, so it returns directly to the previous instance of the function that called it,
-//which is callMe(1). The value 0 is printed, and callMe(1) continues its execution from where it left off, after the recursive call.
+//At this point, the base case does not make any further recursive calls,
+//so it returns directly to the previous instance of the function that called it,
+//which is callMe(1).
+
+// The value 0 is printed, and callMe(1) continues its execution from where it left off,
+//after the recursive call.
+
 //Then, the same process repeats for callMe(1) and its recursive call to callMe(0).
 //Once callMe(1) reaches its base case and prints 1, it returns to the previous instance callMe(2).
+
 //This process continues, with each recursive call returning to the previous instance and...
-//...printing its respective value until the original function call callMe(5) is reached and completes the execution.
+//...printing its respective value until the original function call callMe(5) is reached,
+//and completes the execution.
+
 //So, in summary after the base case (0 in this example) is printed,
-//the function instances that were called in the recursion process print their respective values one by one as they return from their recursive calls.
+//the function instances that were called in the recursion process
+//print their respective values one by one as they return from their recursive calls.
+
 //This process continues until the initial function call completes...
 //..resulting in the reverse printing of values from the base case back to the original call.
 
 }
-
 
 //Recursion as a means of finding the factorial of a number.
 
 
 // -> this first code will not work.
 //the function myFactorial does not have a base case, which is a condition to stop the recursion.
-//the function myFactorial will keep calling itself with a smaller variable, down and past 0 and into infinity.
-//This will result in an infinite loop and eventually cause a "StackOverflowError" because there is no base case to stop the recursion.
+//the function myFactorial will keep calling itself with a smaller variable,
+//down and past 0 and into infinity.
+
+//This will result in an infinite loop and eventually cause a "StackOverflowError"
+//because there is no base case to stop the recursion.
+
 //The base case is essential to stop the recursion and prevent infinite loops.
 
 /*
@@ -1575,23 +1672,42 @@ fun main(){
 //When the factorialNum is equal to 1, the function simply returns 1, and the recursion stops.
 //This way, the function can correctly calculate the factorial of a given number...
 //...by repeatedly multiplying it with smaller factorial values until it reaches the base case.
-//the line factorialNum * myFactorial(factorialNum - 1) results in a function call with a number one less than the current one.
-//This is a crucial part of recursion because it breaks down the original problem into smaller, more manageable sub-problems.
+
+//the line factorialNum * myFactorial(factorialNum - 1)
+//results in a function call with a number one less than the current one.
+
+//This is a crucial part of recursion because it breaks down the original problem into smaller,
+//more manageable sub-problems.
 
 /*
 
 Let's find the factorial of 3 using this code:
 
 We call the myFactorial function with the argument 3.
-The function checks the base case: factorialNum == 1. Since factorialNum is 3, it does not equal 1, so we move to the else part.
-In the else part, we have factorialNum * myFactorial(factorialNum - 1). Here, factorialNum is 3. So we calculate 3 * myFactorial(3 - 1).
+The function checks the base case: factorialNum == 1. Since factorialNum is 3,
+it does not equal 1, so we move to the else part.
+
+In the else part, we have factorialNum * myFactorial(factorialNum - 1).
+Here, factorialNum is 3. So we calculate 3 * myFactorial(3 - 1).
+
 We now have to calculate myFactorial(2). We call the myFactorial function again with the argument 2.
-The function checks the base case: factorialNum == 1. Since factorialNum is 2, it does not equal 1, so we move to the else part.
-In the else part, we have factorialNum * myFactorial(factorialNum - 1). Here, factorialNum is 2. So we calculate 2 * myFactorial(2 - 1).
+The function checks the base case: factorialNum == 1. Since factorialNum is 2, it does not equal 1,
+so we move to the else part.
+
+In the else part, we have factorialNum * myFactorial(factorialNum - 1).
+Here, factorialNum is 2. So we calculate 2 * myFactorial(2 - 1).
+
 We now have to calculate myFactorial(1). We call the myFactorial function again with the argument 1.
-The function checks the base case: factorialNum == 1. Since factorialNum is 1, it equals 1. So the function returns 1.
-Now, we have the value of myFactorial(1), which is 1. We go back to the previous step where we calculated 2 * myFactorial(2 - 1). Replace myFactorial(1) with 1, so it becomes 2 * 1, which equals 2.
-Now, we have the value of myFactorial(2), which is 2. We go back to the previous step where we calculated 3 * myFactorial(3 - 1). Replace myFactorial(2) with 2, so it becomes 3 * 2, which equals 6.
+The function checks the base case: factorialNum == 1. Since factorialNum is 1, it equals 1.
+So the function returns 1.
+
+Now, we have the value of myFactorial(1), which is 1.
+We go back to the previous step where we calculated 2 * myFactorial(2 - 1).
+Replace myFactorial(1) with 1, so it becomes 2 * 1, which equals 2.
+
+Now, we have the value of myFactorial(2), which is 2.
+We go back to the previous step where we calculated 3 * myFactorial(3 - 1).
+Replace myFactorial(2) with 2, so it becomes 3 * 2, which equals 6.
 
 */
 
@@ -1613,11 +1729,13 @@ fun conditional(a: Int, b: Int): Int {
     }else if (a>b){
         return a //if "a" greater than "b", the value of "a" which is greater will be returned
     }else println("Invalid!") //if both values are equal or one or both are invalid
-    return 0 //When defining a function with a return type, all possible execution paths should have a return statement
+    return 0 //When defining a function with a return type,
+            // all possible execution paths should have a return statement
             // that returns a value of the specified type.
 }
 
-//a simple function showing a for loop. a for loop iterates through a range of items and executes the required condition for that range
+//a simple function showing a for loop. a for loop iterates through a range of items
+//and executes the required condition for that range.
 fun myForLoop(){
     val myFruitList = mutableListOf("Apple", "Mango", "Banana")
     for (fruit in myFruitList){
@@ -1630,9 +1748,11 @@ fun myForLoop(){
 //a simple modified function, same as the one above, but this time using the return statement
 fun myForLoopWithReturn(): List<String>{ //to return a list of strings only
     val myCountries  = mutableListOf("Kenya", "Tanzania", "Uganda") //a string list that can be changed
-    val myCountriesLoopList = mutableListOf<String>() //an empty string list to take in the values of the myCountries list.
+    val myCountriesLoopList = mutableListOf<String>() //an empty string list to take in the values
+                                                     // of the myCountries list.
 
-    for (country in myCountries){ //loop through the first list with the country iterator which will take the value of each element
+    for (country in myCountries){ //loop through the first list with the country iterator,
+                                 // which will take the value of each element
         myCountriesLoopList.add(country) //add each element held by "country" to the new list
     }
     return myCountriesLoopList //return the contents of the new list
@@ -1646,7 +1766,8 @@ fun myWhileLoop(){
     var age = 0 //this is a variable that checks the index position of every element in the list.
                //"age" will check the first element "45" at position "0", until "89" at position "4"
     while (age<ages.size){ //ages.size is "5", not "4". the last index position is usually ages.size-1
-                           //using while (age<ages.size-1) would stop the loop from accessing the last element in the list
+                           //using while (age<ages.size-1) would stop the loop from accessing
+                           // the last element in the list
                            //since ages.size-1 is index(4), so 89 will not be included
         print("${ages[age]} ")
         age++
@@ -1669,18 +1790,25 @@ fun myWhileLoop(){
 //the ".." operator gives the range of elements from index 0 to the last element x
 
 /* in the code in question in the list */
-//the range 0 until daysOfWeek.size includes indices 0 to 6, each for a day in the list, representing all the elements in the list
+//the range 0 until daysOfWeek.size includes indices 0 to 6,
+//each for a day in the list, representing all the elements in the list
 //It does not include index 7, which is daysOfWeek.size
 
 //The range 0..daysOfWeek.size includes the indices 0 to 7
-//This is to mean all the indices 0-6, as well as index 7 (daysOfWeek.size) which is the size of the list are covered.
-//Since the daysOfWeek list has 7 elements (indices 0 to 6), using 0..daysOfWeek.size will include an out-of-bounds index due to the invalid index 7
+//This is to mean all the indices 0-6, as well as index 7 (daysOfWeek.size),
+//which is the size of the list are covered.
+//Since the daysOfWeek list has 7 elements (indices 0 to 6),
+//using 0..daysOfWeek.size will include an out-of-bounds index due to the invalid index 7
 
-//To iterate over the valid indices of the daysOfWeek list, you should use 0 until daysOfWeek.size, which includes indices 0 to 6, representing all the elements in the list.
+//To iterate over the valid indices of the daysOfWeek list,
+//you should use 0 until daysOfWeek.size, which includes indices 0 to 6,
+// representing all the elements in the list.
 
 //One could also use daysOfWeek.indices is a PROPERTY of the List interface in Kotlin.
 //It returns a range of valid indices for the list.
-//In this case, it would return the range 0 until daysOfWeek.size, which includes all the valid indices for the daysOfWeek list.
+//In this case, it would return the range 0 until daysOfWeek.size,
+//which includes all the valid indices for the daysOfWeek list.
+
 //For simplicity purposes, we shall employ that for this code :)
 
 fun myWhenElse(){
@@ -1695,13 +1823,21 @@ fun myWhenElse(){
 
 
 fun myForLoopWithRange(){
-    for (a:Int in 1..3){ //the range operator iterates through a range of values and executes the given condition
+    for (a:Int in 1..3){ //the range operator iterates through a range of values,
+                              // and executes the given condition.
+
         for (b:Int in 1..10){
-            println("oooooooooo") //inner loop prints ten "o"s then skips a line after each iteration. this is three times
+            println("oooooooooo") //inner loop prints ten "o"s then skips a line after each iteration.
+                                 // this is three times.
         }
-        println("----------") //outer loop prints ten dashes and jumps to the next line after each iteration. this is three times
-                             //note that the outer loop can only execute until the inner loop completely executes, however many times the inner loop needs
-                            //in this case, the (----) will only be printed after the (oooo) are printed 3 times.
+        println("----------") //outer loop prints ten dashes and jumps to the next line after each iteration.
+                             // this is three times.
+
+                             //note that the outer loop can only execute until the inner loop completely...
+                            // executes, however many times the inner loop needs.
+
+                            //in this case, the (----) will only be printed after the (oooo)
+                           // are printed 3 times.
     }
 }
 
@@ -1709,7 +1845,7 @@ fun myForLoopWithRange(){
 fun iterateRangeWithSkip (){
     val myList = mutableListOf(16, 27, 81, 95, 57, 34, 77, 1, 55, 85, 23, 34)
 
-    for (i in 0 until myList.size step 2){ //prevent access of an out-of-bounds element if we put 0..myList.size
+    for (i in 0..<myList.size step 2){
         print("${myList[i]} ")
     }
     println()
@@ -1888,4 +2024,29 @@ class CarModel(brand: String, private val model: String): CarBrand(brand){
     }
 
 }//end class
+
+// A class that demonstrates with properties and member functions
+
+class DKEmployee (val gender:Char){
+
+    //or val gender: Char = 'M'
+
+    // member functions
+    fun name(name:String):String{
+        return name
+
+    }
+    fun age(age:Int):Int {
+        return age
+
+    }
+    fun salary(salary:Double):Double{
+        return salary
+
+    }
+}
+
+//end class
+
+
 
