@@ -1,15 +1,16 @@
+class MyCars {
+    var carName: String = ""
+    var carYearMade: Int = 0
+    var carInitials: Char = '\u0000'
+}
+
 fun main(){
 
-    fun iterateRangeWithSkip (){
-        val myList = mutableListOf(16, 27, 81, 95, 57, 34, 77, 1, 55, 85, 23, 34, 35)
+    val subaru = MyCars()
 
-        for (i in 0..myList.size step 2){ // (..) includes the last value. (until) does not.
-            print("${myList[i]} ")
-        }
-        println()
-    }
+    subaru.carName = "Subaru"
+    subaru.carYearMade = 1994
+    subaru.carInitials = 'S'
 
-    iterateRangeWithSkip()
-
-
+    println("The car is ${subaru.carName}, made in ${subaru.carYearMade} and is in the ${subaru.carInitials} series.")
 }

@@ -801,7 +801,9 @@ fun main() {
     //where the continue statement appears after the print statement.
 
     //the continue statement within the inner loop doesn't affect the output
-    //because all the inner loop iterations have been executed and printed before the continue statement has a chance to take effect.
+
+    //because all the inner loop iterations have been executed and printed
+    //before the continue statement has a chance to take effect.
 
     for (nestedForLoopOutContinue in 0..3){
         for (nestedForLoopInContinue in 0..3){
@@ -1201,6 +1203,14 @@ fun main() {
 
     println()
 
+    //a sample list to show how a loop variable is used to go through a list,
+    //taking "2 steps" to the next element.
+    val myRogerList = mutableListOf(6, 7, 9, 6, 3, 8, 2)
+
+    for (loopVariable1 in 0..myRogerList.size step 3){
+        print("${myRogerList[loopVariable1]} ")
+    }
+
 
     // -Array lists -
 
@@ -1335,7 +1345,6 @@ fun main() {
     //if you wanted to check if the set contained more than one element, you can use containsAll(setOf())
     //note that ff even one element from the collection is missing in the set, the function will return false.
     println(mySetNumbers.containsAll(setOf(6, 72))) //false
-
 
     //Hash Sets -
 
@@ -1496,7 +1505,7 @@ fun main() {
 
 
 
-//-------------END OF MAIN FUNCTION (T.Y. FOLKS :) )-------------------------------------------------------------------------------------------------------------------------//
+//-------------END OF MAIN FUNCTION (T.Y. FOLKS :) )--------------------------------------------------------//
 
 
 
@@ -1864,7 +1873,8 @@ fun whileLoopTestIndices(){
 
 /*
 
-fun printSumWithUnit(a: Int, b: Int): Unit { //Unit type can be omitted. since the return type is absent, it is this assumed to be Unit
+fun printSumWithUnit(a: Int, b: Int): Unit { //Unit type can be omitted.
+since the return type is absent, it is this assumed to be Unit
 
         println("The sum of $a and $b is ${a + b}")
    }
@@ -1889,7 +1899,9 @@ fun evenNum(x: Int) = x%2 == 0
 
 //A class is a blueprint or a template for creating objects.
 // It defines the properties (attributes) and behaviors (methods) that an object of that class can possess.
-// Classes encapsulate data and functionality together, allowing you to create multiple instances (objects) based on the class definition.
+
+// Classes encapsulate data and functionality together,
+//allowing you to create multiple instances (objects) based on the class definition.
 // Classes are used for creating complex data structures and organizing code into reusable modules.
 // They facilitate object-oriented programming principles like inheritance, polymorphism, and encapsulation.
 
@@ -1904,14 +1916,20 @@ class Book { //name starts with an upper case letter
 //classes also have primary constructors, which are the brackets after the class name
 //these allow us to declare properties and initialize them when we instantiate an object
 
-//NOTE: In a class, you need to use the val or var keywords before the parameters in the primary constructor declaration.
+//NOTE: In a class, you need to use the val or var keywords,
+// before the parameters in the primary constructor declaration.
+
 // This is to make constructor parameters accessible as PROPERTIES within the class
 // This allows you to access and use the values throughout the class.
 
-//WITHOUT the val or var keywords before the constructor parameters, the parameters will not be considered properties of the class.
+//WITHOUT the val or var keywords before the constructor parameters,
+//the parameters will not be considered properties of the class.
+
 //Instead, they will be treated as local variables within the primary constructor.
 //This means you won't be able to access or use these values outside the constructor.
-//Example class MyClass (val a:Int, x:Int) ..x is only a local variable, unlike a which is a class property
+
+//Example class MyClass (val a:Int, x:Int) .."x" is only a local variable,
+//unlike "a" which is a class property
 
 class Person (val name: String, val age: Int) //no default values set in the properties
 
@@ -1920,26 +1938,40 @@ class Hobbies (val myHobby: String)
 
 //Look at this class below.
 
-//We know that class constructors contain properties which need to use the val/var keywords in order to be accessed as properties within the class or outside
+//We know that class constructors contain properties which need to use the val/var keywords
+//in order to be accessed as properties within the class or outside.
+
 //The class below shows a few modifications to show how Kotlin handles data
 
 //One can see that fName, lName, and yearBorn do not have val/var keywords
-//This means that unlike typical class properties in the constructor, they are not accessed outside the class directly, making them local variables.
-//They are only used to initialize the "empFullName" and "empAge" properties but are not stored as separate properties themselves.
-//This is in contrast to the yearsWorked, which is directly accessed as a property in the main function after the class has been instantiated.
+//This means that unlike typical class properties in the constructor,
+//they are not accessed outside the class directly, making them local variables.
+
+//They are only used to initialize the "empFullName" and "empAge" properties,
+//but are not stored as separate properties themselves.
+
+//This is in contrast to the yearsWorked,
+//which is directly accessed as a property in the main function after the class has been instantiated.
 
 //Also note currentYear is set as PRIVATE.
 //Class properties that have been set to "private" demonstrate the use of data encapsulation in Kotlin.
-//Encapsulation is an object-oriented programming principle that aims to bundle data and the methods that operate on that data together into a class.
+//Encapsulation is an object-oriented programming principle that aims to bundle data,
+//and the methods that operate on that data together into a class.
+
 //One aspect of encapsulation is controlling access to the data members of a class.
-//By making currentYear private, one is able you restrict direct access to these properties from outside the class.
+//By making currentYear private,
+//one is able you restrict direct access to these properties from outside the class.
+
 //This allows you to have better control over how these properties are accessed and modified.
 //When a property is private, it can only be accessed within the class itself.
-//In this class code, since you are not directly accessing this property outside the class, you can make them private to enforce encapsulation and prevent unintended modification.
+
+//In this class code, since you are not directly accessing this property outside the class,
+//you can make them private to enforce encapsulation and prevent unintended modification.
 
 
 class MyEmployee(fName: String, lName: String, val yearsWorked: Int, yearBorn: Int){
-    //declaration of properties of a class needs to ALWAYS be in the class, not inside an init block or member function
+    //declaration of properties of a class needs to ALWAYS be in the class,
+    //not inside an init block or member function.
     val empFullName = "$fName $lName"
     val empAge: Int
     private val currentYear = 2023
@@ -1960,7 +1992,8 @@ class MyEmployee(fName: String, lName: String, val yearsWorked: Int, yearBorn: I
 }//end class
 
 
-class Square (height: Double,length: Double){  //a simple class to give the perimeter of a Square when called in the main function.
+class Square (height: Double,length: Double){  //a simple class to give the perimeter of a Square
+                                              // when called in the main function.
     // Classes have first-letter caps
     var perimeter = (height + length) * 2
 }
